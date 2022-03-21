@@ -1,0 +1,19 @@
+digraph G {
+ rankdir=LR;
+node0 [shape=record,label="index 0 | { data 0 | next 3 | prev 1 } " ];
+node1 [shape=record,label="index 1 | { data 11 | next 0 | prev 2 } " ];
+node2 [shape=record,label="index 2 | { data 13 | next 1 | prev 3 } " ];
+node3 [shape=record,label="index 3 | { data 14 | next 2 | prev 0 } " ];
+node0 -> node1[color = transparent];
+node1 -> node2[color = transparent];
+node2 -> node3[color = transparent];
+node0 -> node3 [color = pink];
+node3 -> node2 [color = pink];
+node2 -> node1 [color = pink];
+node1 -> node0 [color = pink];
+info [shape=record, label ="capacity 4 | size 4 | free 4 "];
+head [shape=box3d, label ="head 3 "];
+tail [shape=box3d, label ="tail 1 "];
+head -> node3;
+tail -> node1;
+}
