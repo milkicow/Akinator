@@ -4,14 +4,14 @@ CFLAGS=-c
 
 all: tree
 
-tree: main.o TreeFunctions.o
-	$(CC) main.o TreeFunctions.o -o tree
+tree: main.o AkinatorFunctions.o
+	$(CC) main.o AkinatorFunctions.o -o tree
 
 main.o: main.cpp 
 	$(CC) $(CFLAGS) main.cpp  -o main.o
 
-TreeFunctions.o: TreeFunctions.cpp
-	$(CC) $(CFLAGS) TreeFunctions.cpp  -o TreeFunctions.o
+AkinatorFunctions.o: AkinatorFunctions.cpp
+	$(CC) $(CFLAGS) AkinatorFunctions.cpp  -o AkinatorFunctions.o
 
 clean: 
 	rm -rf *.o tree
