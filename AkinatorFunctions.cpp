@@ -262,16 +262,27 @@ void Akinator(char * FILE_name)
         system(word);
         //printf("%s\n", word);
         
-        scanf("%s", answer);
-        if(strcmp(answer, "yes") == 0)
+
+        while(true)
         {
-            LOX
-            nd = nd -> left_son;
-        }
-        if(strcmp(answer, "no") == 0)
-        {   
-            LOX
-            nd = nd -> right_son;
+            scanf("%s", answer);
+            if(strcmp(answer, "yes") == 0)
+            {
+                LOX
+                nd = nd -> left_son;
+                break;
+            }
+            else if(strcmp(answer, "no") == 0)
+            {   
+                LOX
+                nd = nd -> right_son;
+                break;
+            }
+            else
+            {
+                printf("Type in \"yes\" or \"no\"\n");
+                system("say -v Bad News \"Type in yes or no \" ");
+            }
         }
     }
     system("clear");
@@ -287,21 +298,29 @@ void Akinator(char * FILE_name)
     //printf("%s\n", word);
 
 
-    scanf("%s", answer);
+    while(true)
+    {
+        scanf("%s", answer);
         if(strcmp(answer, "yes") == 0)
         {
             LOX
             printf("\tI knew it!\n");
             system("say -v Good News \"I knew it!\"");
-
+            break;
         }
-        if(strcmp(answer, "нет") == 0)
+        else if(strcmp(answer, "no") == 0)
         {   
             NewCharachter(nd);
-            printf("\tТеперь ты меня не обманешь!!");
-
+            printf("\tYou can't fool me now!!!");
+            system("say -v Bad News \"You can't fool me now!!!\"");
+            break;
         }
-
+        else
+        {
+            printf("Type in \"yes\" or \"no\"\n");
+            system("say -v Bad News \"Type in yes or no \" ");
+        }
+    }
     fp = fopen(FILE_name, "w");
     TreePrintPreOrder(fp, korney, 4);
     TreeFDump(korney);
@@ -316,15 +335,27 @@ void NewCharachter(node * nd)
 {   
     const int ch_size = 20;
     const int dif_size = 50;
+    const int arg_size = 40;
     char * charachter = (char *) calloc(ch_size, sizeof(char));
     char * different = (char *) calloc(dif_size, sizeof(char));
+    char * guess = (char *) calloc(arg_size, sizeof(char));
+    char * word = (char *) calloc(arg_size + 10, sizeof(char));
 
-    printf("Who is it ?\n"); // ДОБАВИТЬ ОЗВУЧКУ !
+    printf("Who is it ?\n"); 
     system("say -v Bad News\"Who is it?\"");
     scanf("%s", charachter);
-    printf("How is %s different from %s\n?", charachter, nd -> data);
 
-    printf("он ");
+    strcpy(word, "say \"How is ");
+    strcat(word, charachter);
+    strcat(word, " different from");
+    strcpy(guess, nd -> data);
+    strcat(guess, "\"");
+    strcat(word, guess);
+
+    printf("How is %s different from %s?\n", charachter, nd -> data);// ДОБАВИТЬ ОЗВУЧКУ !
+    system(word);
+
+    printf("he is ");
     scanf("%s", different);
 
     TreeNodeAdd(nd, &(nd -> left_son), charachter);

@@ -11,11 +11,23 @@
                { seminarian
                    { Loshkarev }
 
-                   { Cheshev }
+                   { can_not_learn_obshesos
+                       { Timofey_Cumin }
+
+                       { Cheshev }
+                   }
                }
 
                { pig
-                   { Ukranian }
+                   { Ukranian
+                       { exPresident_of_ukraine
+                           { Yanukovich }
+
+                           { Reznikov }
+                       }
+
+                       { Zelenskiy }
+                   }
 
                    { 1,5 }
                }
