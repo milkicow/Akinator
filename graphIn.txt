@@ -1,21 +1,21 @@
 
-   { животное
-       { дает_молоко
-           { рогатая
-               { коза }
+   { animal
+       { give_milk
+           { horned
+               { goat }
 
-               { корова }
+               { cow }
            }
 
-           { гандон
-               { семер
-                   { Лошкарев }
+           { gandon
+               { seminarian
+                   { Loshkarev }
 
-                   { Чешев }
+                   { Cheshev }
                }
 
-               { свинья
-                   { Украинец }
+               { pig
+                   { Ukranian }
 
                    { 1,5 }
                }
@@ -37,33 +37,33 @@
                }
            }
 
-           { умный
-               { играет_в_радугу
-                   { Другой_никита }
+           { kind
+               { play_in_rainbow
+                   { another_Nikita }
 
-                   { президент_России
-                       { Путин }
+                   { president_of_Russia
+                       { mrPutin }
 
-                       { морда
-                           { Леха }
+                       { muzzle
+                           { Leha }
 
-                           { Никита }
+                           { Nikita }
                        }
                    }
                }
 
-               { девочка
-                   { Вера }
+               { girl
+                   { Vera }
 
-                   { из_белорусии
-                       { президент
-                           { лукашенко }
+                   { from_Belarus
+                       { president
+                           { Lukashenko }
 
-                           { Владик }
+                           { Vladik }
                        }
 
-                       { в_курсе
-                           { Филатов }
+                       { know
+                           { Filatov }
 
                            { daun }
                        }

@@ -225,11 +225,11 @@ void TreeScanf(FILE * fp, node ** nd, node * parent)
 void Akinator(char * FILE_name)
 {   
     system("clear");
-    printf("\tЯ Siri - могу отгадать кого угодно!\n");   
-    system("say \"Я Siri - могу отгадать кого угодно!\"");
-    printf("\tЗагадай персонажа, а я буду задавать тебе вопросы.\n\n");
-    system("say \"Загадай персонажа, а я буду задавать тебе вопросы.\"");
-    printf("\tДля продолжения нажмите любую кнопку\n");
+    printf("\tI'm Siri - I can guess anyone!\n");   
+    system("say -v Pipe Organ \"I'm Siri - I can guess anyone!\"");
+    printf("\tThink of a character, and I will ask you questions.\n\n");
+    system("say -v Pipe Organ\"Think of a character, and I will ask you questions.\"");
+    printf("\tPress any button\n");
     getchar();
 
     //LOX
@@ -252,23 +252,23 @@ void Akinator(char * FILE_name)
     {   
         system("clear");
 
-        strcpy(word, "say \"это ");
+        strcpy(word, "say \"is it ");
         strcpy(guess, nd -> data);
-        printf("\tэто %s?\n", nd -> data);
+        printf("\tis it %s?\n", nd -> data);
 
         strcat(guess, "\"");
 
         strcat(word, guess);
         system(word);
-        printf("%s\n", word);
+        //printf("%s\n", word);
         
         scanf("%s", answer);
-        if(strcmp(answer, "да") == 0)
+        if(strcmp(answer, "yes") == 0)
         {
             LOX
             nd = nd -> left_son;
         }
-        if(strcmp(answer, "нет") == 0)
+        if(strcmp(answer, "no") == 0)
         {   
             LOX
             nd = nd -> right_son;
@@ -276,23 +276,23 @@ void Akinator(char * FILE_name)
     }
     system("clear");
 
-    strcpy(word, "say \"это ");
+    strcpy(word, "say \"is it ");
     strcpy(guess, nd -> data);
-    printf("\tэто %s?\n", nd -> data);
+    printf("\tis it %s?\n", nd -> data);
 
     strcat(guess, "\"");
 
     strcat(word, guess);
     system(word);
-    printf("%s\n", word);
+    //printf("%s\n", word);
 
 
     scanf("%s", answer);
-        if(strcmp(answer, "да") == 0)
+        if(strcmp(answer, "yes") == 0)
         {
             LOX
-            printf("\tЯ знала!\n");
-            system("say \"Я знала!\"");
+            printf("\tI knew it!\n");
+            system("say -v Good News \"I knew it!\"");
 
         }
         if(strcmp(answer, "нет") == 0)
@@ -319,9 +319,10 @@ void NewCharachter(node * nd)
     char * charachter = (char *) calloc(ch_size, sizeof(char));
     char * different = (char *) calloc(dif_size, sizeof(char));
 
-    printf("Кто же это ?\n"); // ДОБАВИТЬ ОЗВУЧКУ !
+    printf("Who is it ?\n"); // ДОБАВИТЬ ОЗВУЧКУ !
+    system("say -v Bad News\"Who is it?\"");
     scanf("%s", charachter);
-    printf("Чем %s отличается от %s\n?", charachter, nd -> data);
+    printf("How is %s different from %s\n?", charachter, nd -> data);
 
     printf("он ");
     scanf("%s", different);
